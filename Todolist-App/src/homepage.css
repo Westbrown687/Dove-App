@@ -5,12 +5,11 @@ body{
 }
 .app-container{
 display: flex;
-padding-top: 30px;
+padding-top: 20px;
 }
 .side-bar{
    width: 250px;
-   min-width: 100px;
-   background-color: rgb(237, 237, 237);
+   background-color: rgb(244, 244, 244);
    border-radius: 10px;
    margin-right: 20px;
    margin-left: 8px;
@@ -23,13 +22,12 @@ padding-top: 30px;
   
 }
 .menu-text{
-  font-size: 25px;
+  font-size: 23px;
   font-weight: bold;
   font-family: roboto, Arial;
   margin-right: 112px;
   margin-left: 15px;
 }
-
 .date-con{
   display: flex;
   margin-bottom: 40px;
@@ -46,7 +44,7 @@ padding-top: 30px;
 }
 
 .menuimg{
-  height: 25px;
+  height: 23px;
 }
 .menu-button{
  border-radius: 5px;
@@ -148,4 +146,115 @@ input{
   margin-left: 26px;
   font-size: 12px;
   background-color: rgb(237, 237, 237);
+   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.trash-button:hover{
+ transition: transform 0.3s ease;
+ transform: translateY(3px);
+ box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.search {
+  width: 85%;
+  padding: 10px 10px 10px 40px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-left: 18px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search:focus {
+  border-color: #b3b3b3;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+} 
+
+.search-icon {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
+.tasks{
+  font-family: Roboto, Arial;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-left: 18px;
+}
+.upcoming-con {
+  display: flex;
+  position: relative;
+  margin-top: 15px;
+}
+.chevron-right{
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.upcoming-button{
+ border-radius: 5px;
+  padding: 7px 75px;
+  margin-left: 18px;
+  border: none ;
+}
+.upcoming-digit{
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  overflow: hidden;
+}
+.today-con{
+  display: flex;
+  position: relative;
+  margin-top: 15px;
+}
+.hibar{
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.today-button{
+  border-radius: 5px;
+  padding: 7px 87px;
+  margin-left: 18px;
+  border: none ; 
+  overflow: hidden;
+}
+.today-digit{
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+}
+.calender-con{
+  display: flex;
+  position: relative;
+  margin-top: 15px;
+}
+.calender{
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.calender-button{
+  border-radius: 5px;
+  padding: 7px 77px;
+  margin-left: 18px;
+  border: none ; 
+  overflow: hidden;
 }
