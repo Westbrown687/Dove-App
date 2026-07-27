@@ -1,0 +1,152 @@
+.search-container {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.search {
+  width: 85%;
+  padding: 10px 10px 10px 40px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-left: 18px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search:focus {
+  border-color: #b3b3b3;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+} 
+
+.search-icon {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
+.tasks{
+  font-family: Roboto, Arial;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-left: 18px;
+}
+.upcoming-con {
+  display: flex;
+  position: relative;
+  margin-top: 15px;
+  color: rgb(94, 92, 92);
+}
+.chevron-right{
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.upcoming-button{
+ border-radius: 5px;
+  padding-left: 37px;
+  padding-right: 108px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  margin-left: 18px;
+  border: none ;
+  overflow: hidden;
+}
+.upcoming-digit{
+  position: absolute;
+  right: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  overflow: hidden;
+}
+.today-con{
+  display: flex;
+  position: relative;
+  margin-top: 15px;
+   color: rgb(94, 92, 92);
+}
+.hibar{
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.today-button{
+  border-radius: 5px;
+  padding-left: 37px;
+  padding-right: 130px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  margin-left: 18px;
+  border: none ;
+  overflow: hidden;
+}
+.today-digit{
+  position: absolute;
+  right: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+}
+.calender-con{
+  display: flex;
+  position: relative;
+  margin-top: 15px;
+  color: rgb(94, 92, 92);
+}
+.calender{
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.calender-button{
+ border-radius: 5px;
+  padding-left: 37px;
+  padding-right: 112px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  margin-left: 18px;
+  border: none ;
+}
+.color-checker{
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px;
+  background-color: rgb(226, 77, 243);
+  border-radius: 3px;
+  border: none;
+}
+.work-button{
+   border-radius: 5px;
+  padding-left: 37px;
+  padding-right: 136px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  margin-left: 18px;
+  border: none ;
+}
+.personal-button{
+  border-radius: 5px;
+  padding-left: 37px;
+  padding-right: 117px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  margin-left: 18px;
+  border: none ;
+}
+.list-button{
+   border-radius: 5px;
+  padding-left: 37px;
+  padding-right: 136px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  margin-left: 18px;
+  border: none ;
+}
