@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage } from "./HomePage";
+import { Today } from "./today";
 import { SideBar } from "./sidebar";
 import { Upcoming } from "./Upcoming";
 import "./App.css";
@@ -7,11 +7,16 @@ import "./App.css";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/homepage" element={<HomePage />} />
-        <Route path="/sidebar" element={<SideBar />} />
-        <Route path="/upcoming" element={<Upcoming />} />
-      </Routes>
+      <div className="app-container">
+        <SideBar />
+
+        <main className="body-content">
+          <Routes>
+            <Route path="/today" element={<Today />} />
+            <Route path="/upcoming" element={<Upcoming />} />
+          </Routes>
+        </main>
+      </div>
     </BrowserRouter>
   );
 }

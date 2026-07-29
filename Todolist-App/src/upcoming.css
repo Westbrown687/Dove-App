@@ -1,58 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-body{
-  margin: 0;
-}
-.app-container{
-display: flex;
-padding-top: 20px;
-}
-.side-bar{
-   width: 250px;
-   background-color: rgb(244, 244, 244);
-   border-radius: 10px;
-   margin-right: 20px;
-   margin-left: 8px;
-   height: 1000px;
-}
-.todo-menu{
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  
-}
-.menu-text{
-  font-size: 23px;
-  font-weight: bold;
-  font-family: roboto, Arial;
-  margin-right: 112px;
-  margin-left: 15px;
-}
 .date-con{
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   align-items: center;
 }
 
-.today{
-  font-size: 25px;
+.upcoming-text{
+  font-size: 35px;
   font-weight: bold;
   font-family: roboto, Arial;
 }
-.date{
-  margin-left: 30px;
-}
 
-.menuimg{
-  height: 23px;
-}
-.menu-button{
- border-radius: 5px;
- border-style:none;
-padding-top: 4px;
- font-family: Roboto, Arial;
- margin-left: 10px;
-}
 .date-button{
  padding: 5px 12px;
  border-radius: 5px;
@@ -62,6 +19,10 @@ padding-top: 4px;
  font-size: 15px;
  font-family: Roboto, Arial;
  background-color: white;
+ font-size: 16px;
+}
+.date{
+  margin-left: 30px;
 }
 
 .plus-img{
@@ -84,8 +45,6 @@ padding-top: 4px;
   margin-bottom: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-
 .activities-container .activity-item{
  padding: 10px 10px;
   border-radius: 5px;
@@ -102,8 +61,6 @@ padding-top: 4px;
   align-items: center;
   width: 900px;
 }
-
-
 .activities-container .activity-item:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }

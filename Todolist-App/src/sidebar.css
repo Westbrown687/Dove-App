@@ -1,9 +1,39 @@
+.side-bar{
+   width: 250px;
+   background-color: rgb(244, 244, 244);
+   border-radius: 10px;
+   margin-right: 20px;
+   margin-left: 8px;
+   height: 1000px;
+}
+.todo-menu{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.menuimg{
+  height: 25px;
+}
+.menu-text{
+  font-size: 23px;
+  font-weight: bold;
+  font-family: roboto, Arial;
+  margin-right: 112px;
+  margin-left: 15px;
+}
+.menu-button{
+ border-radius: 5px;
+ border-style:none;
+padding-top: 4px;
+ font-family: Roboto, Arial;
+ margin-left: 40px;
+}
+
 .search-container {
   position: relative;
   width: 100%;
   margin-top: 10px;
 }
-
 .search {
   width: 85%;
   padding: 10px 10px 10px 40px;
@@ -14,7 +44,6 @@
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
 .search:focus {
   border-color: #b3b3b3;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
@@ -149,4 +178,8 @@
   padding-top: 7px;
   margin-left: 18px;
   border: none ;
+}
+.today-link{
+  text-decoration: none;
+  color: inherit;
 }

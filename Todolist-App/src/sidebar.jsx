@@ -27,21 +27,22 @@ export function SideBar() {
         <div>
           <div className="tasks">TASK</div>
           <div>
-            <div className="upcoming-con">
-              <Link to="/upcoming">
+            <Link to="/upcoming" className="today-link">
+              <div className="upcoming-con">
                 <FaChevronRight className="chevron-right" />
                 <button className="upcoming-button">Upcoming</button>
                 <button className="upcoming-digit">12</button>
-              </Link>
-            </div>
-            <div className="today-con">
-              <HiBars3 className="hibar" />
-              <button className="today-button">
-                Today
-                <a href="./homepage.jsx"></a>
-              </button>
-              <button className="today-digit">5</button>
-            </div>
+              </div>
+            </Link>
+
+            <Link to="/today" className="today-link">
+              <div className="today-con">
+                <HiBars3 className="hibar" />
+                <button className="today-button">Today</button>
+                <button className="today-digit">5</button>
+              </div>
+            </Link>
+
             <div className="calender-con">
               <HiCalendar className="calender" />
               <button className="calender-button">Calender</button>
