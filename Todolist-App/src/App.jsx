@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Today } from "./today";
 import { SideBar } from "./sidebar";
 import { Upcoming } from "./Upcoming";
+import { StickyWall } from "./stickynote";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/today" element={<Today />} />
             <Route path="/upcoming" element={<Upcoming />} />
+            <Route path="/stickynote" element={<StickyWall />}></Route>
           </Routes>
         </main>
       </div>

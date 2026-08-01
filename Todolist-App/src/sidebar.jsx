@@ -4,6 +4,7 @@ import { FaChevronLeft, FaChevronRight, FaChevronDown } from "react-icons/fa";
 import { HiBars3 } from "react-icons/hi2";
 import { HiCalendar } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { MdOutlineStickyNote2 } from "react-icons/md";
 
 export function SideBar() {
   return (
@@ -26,7 +27,7 @@ export function SideBar() {
         </div>
         <div>
           <div className="tasks">TASK</div>
-          <div>
+          <div className="sidebar-task-container">
             <Link to="/upcoming" className="today-link">
               <div className="upcoming-con">
                 <FaChevronRight className="chevron-right" />
@@ -47,12 +48,18 @@ export function SideBar() {
               <HiCalendar className="calender" />
               <button className="calender-button">Calender</button>
             </div>
+            <Link to="/stickynote" className="today-link">
+              <div className="stickynote-con">
+                <MdOutlineStickyNote2 className="stickynote" />
+                <button className="sticky-button">Sticky Wall</button>
+              </div>
+            </Link>
           </div>
         </div>
 
         <div>
           <div className="tasks">LIST</div>
-          <div>
+          <div className="sidebar-task-container">
             <div className="upcoming-con">
               <button className="color-checker"></button>
               <button className="personal-button">Personal</button>

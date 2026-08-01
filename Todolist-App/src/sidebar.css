@@ -58,6 +58,11 @@ padding-top: 4px;
   transform: translateY(-50%);
   color: gray;
 }
+.sidebar-task-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .tasks{
   font-family: Roboto, Arial;
   font-weight: 600;
@@ -78,7 +83,7 @@ padding-top: 4px;
 }
 .upcoming-button{
  border-radius: 5px;
-  padding-left: 37px;
+  padding-left: 69px;
   padding-right: 108px;
   padding-bottom: 7px;
   padding-top: 7px;
@@ -88,7 +93,7 @@ padding-top: 4px;
 }
 .upcoming-digit{
   position: absolute;
-  right: 34px;
+  right: 40px;
   top: 50%;
   transform: translateY(-50%);
   border: none;
@@ -108,7 +113,7 @@ padding-top: 4px;
 }
 .today-button{
   border-radius: 5px;
-  padding-left: 37px;
+  padding-left: 68px;
   padding-right: 130px;
   padding-bottom: 7px;
   padding-top: 7px;
@@ -118,17 +123,23 @@ padding-top: 4px;
 }
 .today-digit{
   position: absolute;
-  right: 36px;
+  right: 40px;
   top: 50%;
   transform: translateY(-50%);
   border: none;
+}
+.stickynote-con{
+    display: flex;
+  position: relative;
+  margin-top: 15px;
+  color: rgb(94, 92, 92);
 }
 .calender-con{
   display: flex;
   position: relative;
   margin-top: 15px;
   color: rgb(94, 92, 92);
-  margin-bottom: 20px;
+
 }
 .calender{
   position: absolute;
@@ -136,10 +147,25 @@ padding-top: 4px;
   top: 50%;
   transform: translateY(-50%);
 }
+.stickynote{
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .calender-button{
  border-radius: 5px;
-  padding-left: 37px;
+  padding-left: 69px;
   padding-right: 112px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  margin-left: 18px;
+  border: none ;
+}
+.sticky-button{
+  border-radius: 5px;
+  padding-left: 69px;
+  padding-right: 102px;
   padding-bottom: 7px;
   padding-top: 7px;
   margin-left: 18px;
@@ -156,31 +182,34 @@ padding-top: 4px;
   border: none;
 }
 .work-button{
-   border-radius: 5px;
-  padding-left: 37px;
-  padding-right: 136px;
+    border-radius: 5px;
+  padding-left: 68px;
+  padding-right: 130px;
   padding-bottom: 7px;
   padding-top: 7px;
   margin-left: 18px;
   border: none ;
+  overflow: hidden;
 }
 .personal-button{
   border-radius: 5px;
-  padding-left: 37px;
-  padding-right: 117px;
+  padding-left: 68px;
+  padding-right: 110px;
   padding-bottom: 7px;
   padding-top: 7px;
   margin-left: 18px;
   border: none ;
+  overflow: hidden;
 }
 .list-button{
-   border-radius: 5px;
-  padding-left: 37px;
-  padding-right: 136px;
+    border-radius: 5px;
+  padding-left: 68px;
+  padding-right: 130px;
   padding-bottom: 7px;
   padding-top: 7px;
   margin-left: 18px;
   border: none ;
+  overflow: hidden;
 }
 .today-link{
   text-decoration: none;
