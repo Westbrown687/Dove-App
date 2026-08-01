@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 .date-con{
   display: flex;
-  margin-bottom: 48px;
   align-items: center;
+  margin-bottom: 45px;
+  margin-top: 10px;
 }
 
 .today{
@@ -16,7 +17,7 @@
  border-style:solid;
  border-width: 1px;
  border-color: rgb(243, 238, 238);
- font-size: 15px;
+ font-size: 20px;
  font-family: Roboto, Arial;
  background-color: white;
 }

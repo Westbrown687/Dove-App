@@ -3,14 +3,15 @@ import "./upcoming.css";
 export function Upcoming() {
   return (
     <>
-      <section className="date-con">
+      <section className="upcoming-date-con">
         <div className="upcoming-text">Upcoming</div>
         <div className="date">
           <button className="date-button">12</button>
         </div>
       </section>
 
-      <section className="tasks-section">
+      <section className="upcoming-tasks-section">
+        <div className="today-text">Today</div>
         <button className="newtask-con">
           <img className="plus-img" src="/images/plus-alt.svg" alt="Add" />
           <span>Add New task</span>
@@ -45,6 +46,47 @@ export function Upcoming() {
           </div>
         </div>
       </section>
+      <div className="future-tasks-section">
+        <section className="tomorrow-tasks-section">
+          <div className="today-text">Tomorrow</div>
+          <button className="newtask-cons">
+            <img className="plus-img" src="/images/plus-alt.svg" alt="Add" />
+            <span>Add New task</span>
+          </button>
+
+          <div className="activities-container">
+            <div className="activity-items">
+              <input type="checkbox" />
+              <span>Create job posting for SEO specialist</span>
+            </div>
+
+            <div className="activity-items">
+              <input type="checkbox" />
+              <span>Request design asset for land page</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="thisweek-tasks-section">
+          <div className="today-text">This Week</div>
+          <button className="newtask-cons">
+            <img className="plus-img" src="/images/plus-alt.svg" alt="Add" />
+            <span>Add New task</span>
+          </button>
+
+          <div className="activities-container">
+            <div className="activity-items">
+              <input type="checkbox" />
+              <span>Research Content Ideas</span>
+            </div>
+
+            <div className="activity-items">
+              <input type="checkbox" />
+              <span>Create a database of guest authors</span>
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   );
 }
