@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 
@@ -7,6 +8,7 @@ body {
   font-family: Lato, Roboto;
 }
 
+
 .app-container {
   display: flex;
   align-items: flex-start;
@@ -14,9 +16,41 @@ body {
   padding-top: 10px;
 }
 
+
 .side-bar {
   width: 280px;
   flex-shrink: 0;
 }
 
+
+/* NEW */
+
+.main-container {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+
+.body-content {
+  flex: 1;
+  min-width: 0;
+}
+
+
+/* NEW */
+
+.add-task-panel {
+  width: 380px;
+  flex-shrink: 0;
+  min-height: calc(100vh - 10px);
+  border-left: 1px solid #e5e5e5;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.main-container.task-open .tasks-section {
+  width: 96%;
+}
 

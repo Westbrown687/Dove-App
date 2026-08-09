@@ -28,8 +28,12 @@
   margin-right: 10px;
  
 }
-.newtask-con{
-  width: 919px;
+.tasks-section {
+  width: 80%;
+  box-sizing: border-box;
+}
+.today-newtask-con{
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 10px 10px;
@@ -43,42 +47,40 @@
   margin-bottom: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.activities-container .activity-item{
- padding: 10px 10px;
+.today-activities-container .activity-item {
+  padding: 10px 10px;
   border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(243, 238, 238, 0.925);
-  background-color: white;
-  font-family: roboto, arial;
-  font-size: 13px;
+  border: 1px solid rgba(243, 238, 238, 0.925);
   border-top: none;
   border-left: none;
   border-right: none;
+  background-color: white;
+  font-family: Roboto, Arial;
+  font-size: 13px;
   margin-bottom: 8px;
   align-items: center;
-  width: 900px;
+  width: 100%;
+  box-sizing: border-box;
 }
-.activities-container .activity-item:hover {
+.today-activities-container .activity-item:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
-.activity-box{
-   padding: 10px 10px;
+.today-activity-box {
+  padding: 10px 10px;
   border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(243, 238, 238, 0.925);
-  background-color: white;
-  font-family: roboto, arial;
-  font-size: 13px;
+  border: 1px solid rgba(243, 238, 238, 0.925);
   border-top: none;
   border-left: none;
   border-right: none;
+  background-color: white;
+  font-family: Roboto, Arial;
+  font-size: 13px;
   margin-bottom: 8px;
   align-items: center;
-  width: 900px;
+  width: 100%;
+  box-sizing: border-box;
 }
-.activity-box:hover{
+.today-activity-box:hover{
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
 .trash{

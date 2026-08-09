@@ -1,6 +1,6 @@
 import "./today.css";
 
-export function Today() {
+export function Today({ onAddTask }) {
   return (
     <>
       <title>Dove App</title>
@@ -13,12 +13,12 @@ export function Today() {
       </section>
 
       <section className="tasks-section">
-        <button className="newtask-con">
+        <button onClick={onAddTask} className="today-newtask-con">
           <img className="plus-img" src="/images/plus-alt.svg" alt="Add" />
           <span>Add New task</span>
         </button>
 
-        <div className="activities-container">
+        <div className="today-activities-container">
           <div className="activity-item">
             <input type="checkbox" />
             <span>Research Content Ideas</span>
@@ -29,7 +29,7 @@ export function Today() {
             <span>Create a database of guest authors</span>
           </div>
 
-          <div className="activity-box">
+          <div className="today-activity-box">
             <div>
               <input type="checkbox" />
               <span>Renew driver's license</span>

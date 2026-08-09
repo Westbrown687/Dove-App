@@ -1,0 +1,47 @@
+.add-task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-task-header h2 {
+  margin: 0;
+}
+
+.add-task-header button {
+  border: none;
+  background: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.add-task-form input,
+.add-task-form textarea,
+.add-task-form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.add-task-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
