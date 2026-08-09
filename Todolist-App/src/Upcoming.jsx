@@ -1,6 +1,6 @@
 import "./upcoming.css";
 
-export function Upcoming() {
+export function Upcoming({ onAddTask }) {
   return (
     <>
       <section className="upcoming-date-con">
@@ -12,7 +12,7 @@ export function Upcoming() {
 
       <section className="upcoming-tasks-section">
         <div className="today-text">Today</div>
-        <button className="newtask-con">
+        <button onClick={onAddTask} className="newtask-con">
           <img className="plus-img" src="/images/plus-alt.svg" alt="Add" />
           <span>Add New task</span>
         </button>

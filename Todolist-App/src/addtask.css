@@ -32,6 +32,7 @@
   border-radius: 7px;
   font-family: inherit;
   font-size: 14px;
+  outline: none;
 }
 
 .add-task-form textarea {
@@ -42,6 +43,15 @@
 .task-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 50px;
+  margin-top: 36px;
+}
+.task-actions button{
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border-width: 1px;
+   border: 1px solid #ddd;
+   background-color: rgb(70, 66, 66);
+   color:#ddd;
 }

@@ -34,7 +34,8 @@
 .future-tasks-section{
   display: flex;
   width: 84%;
-  
+  gap: 40px;
+ 
 }
 .upcoming-tasks-section{
   height: 270px;
@@ -56,19 +57,19 @@ margin-bottom: 10px;
   margin-top: 20px;
   border-style: solid;
   height: 240px;
-  width: 420px;
+  width: 100%;
   border-radius: 10px;
   border-width: 1px;
   padding: 15px 20px;
   padding-bottom: 0px;
   border-color: rgb(237, 235, 235);
-  margin-right: 30px;
+  
 }
 .thisweek-tasks-section{
   margin-top: 20px;
   border-style: solid;
   height: 240px;
-  width: 420px;
+  width: 100%;
   border-radius: 10px;
   border-width: 1px;
   padding: 15px 20px;

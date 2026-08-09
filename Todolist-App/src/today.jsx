@@ -1,4 +1,5 @@
 import "./today.css";
+import { FaChevronLeft, FaChevronRight, FaChevronDown } from "react-icons/fa";
 
 export function Today({ onAddTask }) {
   return (
@@ -22,11 +23,17 @@ export function Today({ onAddTask }) {
           <div className="activity-item">
             <input type="checkbox" />
             <span>Research Content Ideas</span>
+            <button className="greaterthan">
+              <FaChevronRight />
+            </button>
           </div>
 
           <div className="activity-item">
             <input type="checkbox" />
             <span>Create a database of guest authors</span>
+            <button className="greaterthan">
+              <FaChevronRight />
+            </button>
           </div>
 
           <div className="today-activity-box">
@@ -34,7 +41,9 @@ export function Today({ onAddTask }) {
               <input type="checkbox" />
               <span>Renew driver's license</span>
             </div>
-
+            <button className="greaterthan">
+              <FaChevronRight />
+            </button>
             <button className="trash-button">
               <img className="trash" src="/images/trash.svg" alt="Delete" />
               <span>22-08-26</span>
@@ -44,11 +53,17 @@ export function Today({ onAddTask }) {
           <div className="activity-item">
             <input type="checkbox" />
             <span>Consult accountant</span>
+            <button className="greaterthan">
+              <FaChevronRight />
+            </button>
           </div>
 
           <div className="activity-item">
             <input type="checkbox" />
             <span>Print business card</span>
+            <button className="greaterthan">
+              <FaChevronRight />
+            </button>
           </div>
         </div>
       </section>
