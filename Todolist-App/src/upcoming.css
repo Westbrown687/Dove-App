@@ -33,6 +33,7 @@
 }
 .future-tasks-section{
   display: flex;
+  width: 84%;
   
 }
 .upcoming-tasks-section{
@@ -43,6 +44,7 @@
   border-width: 1px;
   border-color: rgb(237, 235, 235);
   border-radius: 10px;
+  width: 80%;
 }
 .today-text{
 font-family: lato;
@@ -74,7 +76,7 @@ margin-bottom: 10px;
   border-color: rgb(237, 235, 235);
 }
 .newtask-con{
-  width: 912px;
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 8px 8px;
@@ -89,7 +91,7 @@ margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .newtask-cons{
-  width: 410px;
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 8px 8px;
@@ -104,7 +106,7 @@ margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .activities-container .activity-items{
-  width: 400px;
+  width: 100%;
    padding: 4px 4px;
   border-radius: 5px;
   border-style: solid;
@@ -136,13 +138,15 @@ margin-bottom: 10px;
   border-right: none;
   margin-bottom: 8px;
   align-items: center;
-  width: 905px;
+  width: 100%;
 }
 .activities-container .activity-item:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
 .activity-box{
-   padding: 10px 10px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   padding-left: 10px;
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
@@ -155,7 +159,7 @@ margin-bottom: 10px;
   border-right: none;
   margin-bottom: 8px;
   align-items: center;
-  width: 895px;
+  width: 100%;
 }
 .activity-box:hover{
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
