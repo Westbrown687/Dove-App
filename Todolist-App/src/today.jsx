@@ -1,7 +1,25 @@
 import "./today.css";
-import { FaChevronLeft, FaChevronRight, FaChevronDown } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import supabaseApi from "./services/supabaseApi";
 
 export function Today({ onAddTask }) {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const getTasks = async () => {
+      try {
+        const response = await supabaseApi.get("/tasks");
+
+        setTasks(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    getTasks();
+  }, []);
   return (
     <>
       <title>Dove App</title>
@@ -20,6 +38,34 @@ export function Today({ onAddTask }) {
         </button>
 
         <div className="today-activities-container">
+          {tasks.map((task) => {
+            return (
+              <div key={task.id} className="activity-item">
+                <div className="activity-main">
+                  <div className="activity-title">
+                    <input type="checkbox" checked={task.is_completed} />
+                    <span>{task.title}</span>
+                  </div>
+
+                  <div className="task-description">
+                    <span>Description: {task.description}</span>
+                  </div>
+                </div>
+                <div className="task-details">
+                  <span className={`priority ${task.priority}`}>
+                    Priority: {task.priority}
+                  </span>
+
+                  <span className="task-date">Due: {task.due_date}</span>
+                </div>
+
+                <button className="greaterthan">
+                  <FaChevronRight />
+                </button>
+              </div>
+            );
+          })}
+          {/*
           <div className="activity-item">
             <input type="checkbox" />
             <span>Research Content Ideas</span>
@@ -27,7 +73,6 @@ export function Today({ onAddTask }) {
               <FaChevronRight />
             </button>
           </div>
-
           <div className="activity-item">
             <input type="checkbox" />
             <span>Create a database of guest authors</span>
@@ -35,7 +80,6 @@ export function Today({ onAddTask }) {
               <FaChevronRight />
             </button>
           </div>
-
           <div className="today-activity-box">
             <div>
               <input type="checkbox" />
@@ -49,7 +93,6 @@ export function Today({ onAddTask }) {
               <span>22-08-26</span>
             </button>
           </div>
-
           <div className="activity-item">
             <input type="checkbox" />
             <span>Consult accountant</span>
@@ -57,7 +100,6 @@ export function Today({ onAddTask }) {
               <FaChevronRight />
             </button>
           </div>
-
           <div className="activity-item">
             <input type="checkbox" />
             <span>Print business card</span>
@@ -65,6 +107,7 @@ export function Today({ onAddTask }) {
               <FaChevronRight />
             </button>
           </div>
+          */}
         </div>
       </section>
     </>

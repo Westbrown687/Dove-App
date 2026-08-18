@@ -31,27 +31,39 @@ export function SideBar() {
             <Link to="/upcoming" className="today-link">
               <div className="upcoming-con">
                 <FaChevronRight className="chevron-right" />
-                <button className="upcoming-button">Upcoming</button>
-                <button className="upcoming-digit">12</button>
+                <button className="upcoming-button">
+                  <span>Upcoming</span>
+                </button>
+                <button className="upcoming-digit">
+                  <span>12</span>
+                </button>
               </div>
             </Link>
 
             <Link to="/today" className="today-link">
               <div className="today-con">
                 <HiBars3 className="hibar" />
-                <button className="today-button">Today</button>
-                <button className="today-digit">5</button>
+                <button className="today-button">
+                  <span>Today</span>
+                </button>
+                <button className="today-digit">
+                  <span>5</span>
+                </button>
               </div>
             </Link>
 
             <div className="calender-con">
               <HiCalendar className="calender" />
-              <button className="calender-button">Calender</button>
+              <button className="calender-button">
+                <span>Calender</span>
+              </button>
             </div>
             <Link to="/stickynote" className="today-link">
               <div className="stickynote-con">
                 <MdOutlineStickyNote2 className="stickynote" />
-                <button className="sticky-button">Sticky Wall</button>
+                <button className="sticky-button">
+                  <span>Sticky Wall</span>
+                </button>
               </div>
             </Link>
           </div>
@@ -62,17 +74,27 @@ export function SideBar() {
           <div className="sidebar-task-container">
             <div className="upcoming-con">
               <button className="color-checker"></button>
-              <button className="personal-button">Personal</button>
-              <button className="upcoming-digit">3</button>
+              <button className="personal-button">
+                <span>Personal</span>
+              </button>
+              <button className="upcoming-digit">
+                <span>3</span>
+              </button>
             </div>
             <div className="today-con">
               <button className="color-checker"></button>
-              <button className="work-button">Work</button>
-              <button className="today-digit">5</button>
+              <button className="work-button">
+                <span>Work</span>
+              </button>
+              <button className="today-digit">
+                <span>5</span>
+              </button>
             </div>
             <div className="calender-con">
               <button className="color-checker"></button>
-              <button className="list-button">List 1</button>
+              <button className="list-button">
+                <span>List 1</span>
+              </button>
             </div>
           </div>
         </div>

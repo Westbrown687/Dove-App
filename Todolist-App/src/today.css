@@ -66,6 +66,21 @@
 .today-activities-container .activity-item:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
+.activity-main{
+  display: flex;
+  flex-direction: column;
+}
+.task-description{
+  margin-top: 12px;
+}
+.task-details{
+  margin-top: 12px;
+}
+
+.task-date{
+  margin-left: 10%;
+  
+}
 .today-activity-box {
   padding: 10px 10px;
   border-radius: 5px;
@@ -119,10 +134,14 @@ right: 20px;
 border: none;
 border-radius: 5px;
 padding-top: 3px;
+top: 13px;
 }
 .today-activity-box .greaterthan{
   position: absolute;
   top: 10px;
   border: none;
   padding-top: 3px;
+}
+span{
+  font-size: 15px;
 }
