@@ -6,6 +6,7 @@ import supabaseApi from "./services/supabaseApi";
 
 export function Today({ onAddTask, refreshTask, taskDelete }) {
   const [tasks, setTasks] = useState([]);
+  const [expandTask, setExpandTask] = useState(null);
 
   useEffect(() => {
     const getTasks = async () => {
@@ -33,6 +34,13 @@ export function Today({ onAddTask, refreshTask, taskDelete }) {
       console.error("Delete error:", error.response?.data);
     }
   };
+
+  const toggleTask = (taskId) => {
+    return setExpandTask((currentTask) =>
+      currentTask === taskId ? null : taskId,
+    );
+  };
+
   return (
     <>
       <title>Dove App</title>
@@ -53,33 +61,47 @@ export function Today({ onAddTask, refreshTask, taskDelete }) {
         <div className="today-activities-container">
           {tasks.map((task) => {
             return (
-              <div key={task.id} className="activity-item">
+              <div
+                key={task.id}
+                className={`activity-item ${
+                  expandTask === task.id ? "expanded" : ""
+                }`}
+              >
                 <div className="activity-main">
                   <div className="activity-title">
                     <input type="checkbox" checked={task.is_completed} />
                     <span>{task.title}</span>
                   </div>
 
-                  <div className="task-description">
-                    <span>Description: {task.description}</span>
-                  </div>
+                  {expandTask === task.id && (
+                    <div className="task-description">
+                      <span>Description: {task.description}</span>
+                    </div>
+                  )}
                 </div>
-                <div className="task-details">
-                  <span className={`priority ${task.priority}`}>
-                    Priority: {task.priority}
-                  </span>
-                  <span className="task-date">Due: {task.due_date}</span>
-                  <button
-                    className="delete-button"
-                    onClick={() => {
-                      deleteTask(task.id);
-                    }}
-                  >
-                    <FaTrash />
-                  </button>
-                </div>
+                {expandTask === task.id && (
+                  <div className="task-details">
+                    <span className={`priority ${task.priority}`}>
+                      Priority: {task.priority}
+                    </span>
 
-                <button className="greaterthan">
+                    <span className="task-date">Due: {task.due_date}</span>
+
+                    <button
+                      className="delete-button"
+                      onClick={() => deleteTask(task.id)}
+                    >
+                      <FaTrash />
+                    </button>
+                  </div>
+                )}
+
+                <button
+                  className="greaterthan"
+                  onClick={() => {
+                    return toggleTask(task.id);
+                  }}
+                >
                   <FaChevronRight />
                 </button>
               </div>

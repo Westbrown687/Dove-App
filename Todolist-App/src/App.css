@@ -14,12 +14,13 @@ body {
   align-items: flex-start;
   min-height: 100vh;
   padding-top: 10px;
+  
 }
 
 
 .side-bar {
   width: 280px;
-  flex-shrink: 0;
+  flex-shrink: 0; 
 }
 
 

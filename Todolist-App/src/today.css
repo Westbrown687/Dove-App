@@ -152,7 +152,9 @@ padding-top: 3px;
 top: 13px;
 box-shadow: 3px 3.7px 3.6px rgba(0, 0, 0, 0.2);
 }
-
+.activity-item.expanded .greaterthan svg {
+  transform: rotate(90deg);
+}
 .greaterthan:hover{
  transition: transform 0.3s ease;
  transform: translateY(3px);
