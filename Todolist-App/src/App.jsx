@@ -11,6 +11,7 @@ import "./App.css";
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
+  const [refreshTask, setRefreshTask] = useState(0);
 
   return (
     <BrowserRouter>
@@ -22,7 +23,17 @@ function App() {
             <Routes>
               <Route
                 path="/today"
-                element={<Today onAddTask={() => setShowAddTask(true)} />}
+                element={
+                  <Today
+                    onAddTask={() => setShowAddTask(true)}
+                    taskDelete={() => {
+                      setRefreshTask((value) => {
+                        return value + 1;
+                      });
+                    }}
+                    refreshTask={refreshTask}
+                  />
+                }
               />
 
               <Route
@@ -34,7 +45,12 @@ function App() {
             </Routes>
           </main>
 
-          {showAddTask && <AddTask onClose={() => setShowAddTask(false)} />}
+          {showAddTask && (
+            <AddTask
+              onClose={() => setShowAddTask(false)}
+              onTaskAdded={() => setRefreshTask((value) => value + 1)}
+            />
+          )}
         </div>
       </div>
     </BrowserRouter>

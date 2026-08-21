@@ -1,11 +1,32 @@
 import "./addtask.css";
 import { useState } from "react";
+import supabaseApi from "./services/supabaseApi";
 
-export function AddTask({ onClose }) {
+export function AddTask({ onClose, onTaskAdded }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [priority, setPriority] = useState("low");
+
+  const addTask = async () => {
+    try {
+      const response = await supabaseApi.post("/tasks", {
+        title: title,
+        description: description,
+        due_date: dueDate || null,
+        priority: priority,
+        is_complete: false,
+      });
+
+      console.log(response.data);
+
+      onTaskAdded();
+      onClose();
+    } catch (error) {
+      console.error("Full error:", error);
+      console.error("Supabase error:", error.response?.data);
+    }
+  };
   return (
     <aside className="add-task-panel">
       <div className="add-task-header">
@@ -66,7 +87,7 @@ export function AddTask({ onClose }) {
         <div className="task-actions">
           <button onClick={onClose}>Cancel</button>
 
-          <button>Add Task</button>
+          <button onClick={addTask}>Add Task</button>
         </div>
       </div>
     </aside>

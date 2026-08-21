@@ -1,9 +1,10 @@
 import "./today.css";
 import { FaChevronRight } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import supabaseApi from "./services/supabaseApi";
 
-export function Today({ onAddTask }) {
+export function Today({ onAddTask, refreshTask, taskDelete }) {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -19,7 +20,19 @@ export function Today({ onAddTask }) {
     };
 
     getTasks();
-  }, []);
+  }, [refreshTask]);
+
+  const deleteTask = async (taskId) => {
+    try {
+      await supabaseApi.delete(`/tasks?id=eq.${taskId}`);
+
+      console.log("Task deleted");
+
+      taskDelete();
+    } catch (error) {
+      console.error("Delete error:", error.response?.data);
+    }
+  };
   return (
     <>
       <title>Dove App</title>
@@ -55,8 +68,15 @@ export function Today({ onAddTask }) {
                   <span className={`priority ${task.priority}`}>
                     Priority: {task.priority}
                   </span>
-
                   <span className="task-date">Due: {task.due_date}</span>
+                  <button
+                    className="delete-button"
+                    onClick={() => {
+                      deleteTask(task.id);
+                    }}
+                  >
+                    <FaTrash />
+                  </button>
                 </div>
 
                 <button className="greaterthan">
