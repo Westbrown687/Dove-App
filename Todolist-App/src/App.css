@@ -31,12 +31,14 @@ body {
   flex: 1;
   min-width: 0;
   width: 100%;
+  min-height: 0;
 }
 
 
 .body-content {
   flex: 1;
   min-width: 0;
+  min-height: 0;
 }
 
 

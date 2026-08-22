@@ -1,6 +1,6 @@
 import "./today.css";
-import { FaChevronRight } from "react-icons/fa";
-import { FaTrash } from "react-icons/fa";
+import { FaChevronRight, FaTrash } from "react-icons/fa";
+
 import { useState } from "react";
 import { useTasks } from "./hooks/useTasks";
 import supabaseApi from "./services/supabaseApi";
