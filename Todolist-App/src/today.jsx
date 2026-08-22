@@ -1,27 +1,13 @@
 import "./today.css";
 import { FaChevronRight } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useTasks } from "./hooks/useTasks";
 import supabaseApi from "./services/supabaseApi";
 
 export function Today({ onAddTask, refreshTask, taskDelete }) {
-  const [tasks, setTasks] = useState([]);
+  const { tasks, loading } = useTasks(refreshTask);
   const [expandTask, setExpandTask] = useState(null);
-
-  useEffect(() => {
-    const getTasks = async () => {
-      try {
-        const response = await supabaseApi.get("/tasks");
-
-        setTasks(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    getTasks();
-  }, [refreshTask]);
 
   const deleteTask = async (taskId) => {
     try {

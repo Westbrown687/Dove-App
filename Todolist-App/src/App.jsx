@@ -26,11 +26,7 @@ function App() {
                 element={
                   <Today
                     onAddTask={() => setShowAddTask(true)}
-                    taskDelete={() => {
-                      setRefreshTask((value) => {
-                        return value + 1;
-                      });
-                    }}
+                    taskDelete={() => setRefreshTask((value) => value + 1)}
                     refreshTask={refreshTask}
                   />
                 }
@@ -38,7 +34,12 @@ function App() {
 
               <Route
                 path="/upcoming"
-                element={<Upcoming onAddTask={() => setShowAddTask(true)} />}
+                element={
+                  <Upcoming
+                    onAddTask={() => setShowAddTask(true)}
+                    refreshTask={refreshTask}
+                  />
+                }
               />
 
               <Route path="/stickynote" element={<StickyWall />} />
