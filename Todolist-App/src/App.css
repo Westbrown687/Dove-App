@@ -54,4 +54,9 @@ body {
 .main-container.task-open .tasks-section {
   width: 96%;
 }
-
+.main-container.task-open .today{
+  width: 18%;
+}
+.main-container.task-open .upcoming-text{
+  width: 28%;
+}

@@ -46,9 +46,11 @@ export function Today({ onAddTask, refreshTask, taskDelete }) {
       <title>Dove App</title>
 
       <section className="date-con">
-        <div className="today">Today</div>
-        <div className="date">
-          <button className="date-button">5</button>
+        <div className="today">
+          <span>Today</span>
+        </div>
+        <div className="quantity">
+          <span>{tasks.length}</span>
         </div>
       </section>
 
@@ -91,6 +93,7 @@ export function Today({ onAddTask, refreshTask, taskDelete }) {
                       className="delete-button"
                       onClick={() => deleteTask(task.id)}
                     >
+                      <span>Delete</span>
                       <FaTrash />
                     </button>
                   </div>

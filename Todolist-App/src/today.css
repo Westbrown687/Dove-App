@@ -7,22 +7,24 @@
 }
 
 .today{
+  width: 12%;
+}
+.today span{
   font-size: 35px;
   font-weight: bold;
   font-family: roboto, Arial;
 }
-.date-button{
- padding: 5px 12px;
- border-radius: 5px;
- border-style:solid;
- border-width: 1px;
- border-color: rgb(243, 238, 238);
- font-size: 20px;
- font-family: Roboto, Arial;
- background-color: white;
+.quantity{
+  flex: 1;
 }
-
-
+.quantity span{
+  font-weight: bold;
+  font-family: roboto, Arial;
+  font-size: 22px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(243, 238, 238, 0.925);
+}
 .plus-img{
   height: 15px;
   margin-right: 10px;
@@ -92,13 +94,18 @@ border-radius: 5px;
 border: none;
  box-shadow: -3px 3px 3.3px rgba(0, 0, 0, 0.2);
  color: rgb(95, 95, 95);
- 
  overflow: hidden;
 }
 .delete-button:hover{
  transition: transform 0.3s ease;
  transform: translateY(3px);
  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.delete-button span{
+  color: black;
+}
+.delete-button svg{
+  margin-left: 15px;
 }
 .today-activity-box {
   padding: 10px 10px;

@@ -6,25 +6,22 @@
 }
 
 .upcoming-text{
-  font-size: 40px;
+  width: 20%;
+}
+.upcoming-text span{
+font-size: 40px;
   font-weight: bold;
   font-family: roboto, Arial;
 }
-
-.date-button{
- padding: 5px 12px;
+.upcoming-quantity span{
+  font-weight: bold;
+  font-family: roboto, Arial;
+  font-size: 22px;
+ border: 1px solid rgba(243, 238, 238, 0.925);
+ padding: 4px 7px;
  border-radius: 5px;
- border-style:solid;
- border-width: 1px;
- border-color: rgb(243, 238, 238);
- font-size: 20px;
- font-family: Roboto, Arial;
- background-color: white;
- font-weight:800
 }
-.date{
-  margin-left: 30px;
-}
+
 
 .plus-img{
   height: 15px;

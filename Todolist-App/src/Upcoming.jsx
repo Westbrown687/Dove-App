@@ -1,12 +1,15 @@
+import { useState } from "react";
 import "./upcoming.css";
 
 export function Upcoming({ onAddTask }) {
   return (
     <>
       <section className="upcoming-date-con">
-        <div className="upcoming-text">Upcoming</div>
-        <div className="date">
-          <button className="date-button">12</button>
+        <div className="upcoming-text">
+          <span>Upcoming</span>
+        </div>
+        <div className="upcoming-quantity">
+          <span>12</span>
         </div>
       </section>
 
