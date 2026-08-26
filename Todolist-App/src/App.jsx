@@ -37,6 +37,7 @@ function App() {
                 element={
                   <Upcoming
                     onAddTask={() => setShowAddTask(true)}
+                    taskDelete={() => setRefreshTask((value) => value + 1)}
                     refreshTask={refreshTask}
                   />
                 }

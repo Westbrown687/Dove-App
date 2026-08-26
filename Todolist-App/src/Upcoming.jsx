@@ -1,10 +1,29 @@
-import { useState } from "react";
 import "./upcoming.css";
 import { FaChevronRight, FaTrash } from "react-icons/fa";
 import { useTasks } from "./hooks/useTasks";
+import supabaseApi from "./services/supabaseApi";
+import { useState } from "react";
 
-export function Upcoming({ onAddTask, refreshTask }) {
+export function Upcoming({ onAddTask, refreshTask, taskDelete }) {
   const { tasks, loading } = useTasks(refreshTask);
+  const [expandTask, setExpandTask] = useState(null);
+
+  const deleteTask = async (taskId) => {
+    try {
+      await supabaseApi.delete(`/tasks?id=eq.${taskId}`);
+      console.log("Task deleted");
+
+      taskDelete();
+    } catch (error) {
+      console.error("Delete error:", error.response?.data);
+    }
+  };
+
+  const toggleTask = (taskId) => {
+    return setExpandTask((currentTask) =>
+      currentTask === taskId ? null : taskId,
+    );
+  };
 
   return (
     <>
@@ -31,7 +50,12 @@ export function Upcoming({ onAddTask, refreshTask }) {
             <p>Loading tasks...</p>
           ) : (
             tasks.map((task) => (
-              <div key={task.id} className="activity-item">
+              <div
+                key={task.id}
+                className={`activity-item ${
+                  expandTask === task.id ? "expanded" : ""
+                }`}
+              >
                 <div className="activity-main">
                   <div className="activity-title">
                     <input
@@ -43,28 +67,37 @@ export function Upcoming({ onAddTask, refreshTask }) {
                     <span>{task.title}</span>
                   </div>
 
-                  <div className="task-description">
-                    <span>Description: {task.description}</span>
+                  {expandTask === task.id && (
+                    <div className="task-description">
+                      <span>Description: {task.description}</span>
+                    </div>
+                  )}
+                </div>
+
+                {expandTask === task.id && (
+                  <div className="task-details">
+                    <span className={`priority ${task.priority}`}>
+                      Priority: {task.priority}
+                    </span>
+
+                    <span className="task-date">Due: {task.due_date}</span>
+
+                    <button
+                      className="delete-button"
+                      onClick={() => deleteTask(task.id)}
+                    >
+                      <span>Delete</span>
+                      <FaTrash />
+                    </button>
                   </div>
-                </div>
+                )}
 
-                <div className="task-details">
-                  <span className={`priority ${task.priority}`}>
-                    Priority: {task.priority}
-                  </span>
-
-                  <span className="task-date">Due: {task.due_date}</span>
-
-                  <button
-                    className="delete-button"
-                    onClick={() => deleteTask(task.id)}
-                  >
-                    <span>Delete</span>
-                    <FaTrash />
-                  </button>
-                </div>
-
-                <button className="greater-than">
+                <button
+                  className="greater-than"
+                  onClick={() => {
+                    return toggleTask(task.id);
+                  }}
+                >
                   <FaChevronRight />
                 </button>
               </div>
