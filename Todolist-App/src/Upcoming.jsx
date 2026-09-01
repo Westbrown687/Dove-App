@@ -25,6 +25,29 @@ export function Upcoming({ onAddTask, refreshTask, taskDelete }) {
     );
   };
 
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+
+  const endOfWeek = new Date(today);
+  const dayOfWeek = today.getDay();
+  endOfWeek.setDate(today.getDate() + (7 - dayOfWeek));
+  endOfWeek.setHours(0, 0, 0, 0);
+
+  const tomorrowTasks = tasks.filter((task) => {
+    if (!task.due_date) return false;
+    const taskDate = new Date(task.due_date + "T00:00:00");
+    return taskDate.getTime() === tomorrow.getTime();
+  });
+
+  const thisWeekTasks = tasks.filter((task) => {
+    if (!task.due_date) return false;
+    const taskDate = new Date(task.due_date + "T00:00:00");
+    return taskDate > tomorrow && taskDate <= endOfWeek;
+  });
+
   return (
     <>
       <section className="upcoming-date-con">
@@ -106,25 +129,61 @@ export function Upcoming({ onAddTask, refreshTask, taskDelete }) {
         </div>
       </section>
 
-      {/*
-       <div className="future-tasks-section">
+      <div className="future-tasks-section">
         <section className="tomorrow-tasks-section">
-          <div className="today-text">Tomorrow</div>
-          <button className="newtask-cons">
+          <div className="today-text">Tomorrow</div>{" "}
+          <button onClick={onAddTask} className="newtask-cons">
             <img className="plus-img" src="/images/plus-alt.svg" alt="Add" />
-            <span>Add New task</span>
+            <span>Add New task</span>{" "}
           </button>
-
-          <div className="activities-container">
-            <div className="activity-items">
-              <input type="checkbox" />
-              <span>Create job posting for SEO specialist</span>
-            </div>
-
-            <div className="activity-items">
-              <input type="checkbox" />
-              <span>Request design asset for land page</span>
-            </div>
+          <div className="tomorrow-activities-container">
+            {tomorrowTasks.length === 0 ? (
+              <p>No tasks for tomorrow.</p>
+            ) : (
+              tomorrowTasks.map((task) => (
+                <div
+                  key={task.id}
+                  className={`activity-item ${expandTask === task.id ? "expanded" : ""}`}
+                >
+                  <div className="activity-main">
+                    <div className="activity-title">
+                      <input
+                        type="checkbox"
+                        checked={task.is_completed}
+                        readOnly
+                      />
+                      <span>{task.title}</span>
+                    </div>
+                    {expandTask === task.id && (
+                      <div className="task-description">
+                        <span> Description: {task.description} </span>
+                      </div>
+                    )}
+                  </div>
+                  {expandTask === task.id && (
+                    <div className="task-details">
+                      {" "}
+                      <span className={`priority ${task.priority}`}>
+                        Priority: {task.priority}
+                      </span>
+                      <span className="task-date"> Due: {task.due_date} </span>{" "}
+                      <button
+                        className="delete-button"
+                        onClick={() => deleteTask(task.id)}
+                      >
+                        <span>Delete</span> <FaTrash />
+                      </button>
+                    </div>
+                  )}
+                  <button
+                    className="greater-than"
+                    onClick={() => toggleTask(task.id)}
+                  >
+                    <FaChevronRight />
+                  </button>
+                </div>
+              ))
+            )}
           </div>
         </section>
 
@@ -148,7 +207,6 @@ export function Upcoming({ onAddTask, refreshTask, taskDelete }) {
           </div>
         </section>
       </div>
-*/}
     </>
   );
 }
