@@ -162,7 +162,6 @@ export function Upcoming({ onAddTask, refreshTask, taskDelete }) {
                   </div>
                   {expandTask === task.id && (
                     <div className="task-details">
-                      {" "}
                       <span className={`priority ${task.priority}`}>
                         Priority: {task.priority}
                       </span>
@@ -176,7 +175,7 @@ export function Upcoming({ onAddTask, refreshTask, taskDelete }) {
                     </div>
                   )}
                   <button
-                    className="greater-than"
+                    className="upcoming-greaterthan"
                     onClick={() => toggleTask(task.id)}
                   >
                     <FaChevronRight />
